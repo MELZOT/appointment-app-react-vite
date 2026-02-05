@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+Appointment Management – React Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend εφαρμογή διαχείρισης κατηγοριών και ραντεβού, υλοποιημένη με React + Vite.
+Συνδέεται με Spring Boot backend μέσω REST API και JWT authentication.
 
-Currently, two official plugins are available:
+##Τεχνολογίες
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- React Router
+- React Hot Toast
+- Lucide Icons
+- 
+##Λειτουργίες
+- Προβολή κατηγοριών ραντεβού
+- Προβολή ραντεβού ανά κατηγορία
+- Login με JWT
+- Role-based UI
+- CRUD Categories & Appointments
+- Toast notifications
+- Protected routes
+- 
+##Roles
+Visitor: προβολή κατηγοριών και ραντεβού
+OWNER: πλήρης διαχείριση και πρόσβαση
+Πώς τρέχει το project
+1. git clone <frontend-repo-url>
+2. cd appointment-ui
+3. npm install
+4. npm run dev
+Τρέχει στο http://localhost:5173
+Backend: http://localhost:8080
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##Authentication
+POST /api/auth/login
+Demo credentials:
+username: owner
+password: 1234
 
-## React Compiler
+##Routing
+/ Categories
+/categories/:id
+/login
+/appointments/new
+/appointments/:id/edit
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##UI / UX
+Tailwind CSS, cards layout, tables, toast notifications, footer.
 
-## Expanding the ESLint configuration
+*****Video Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Το repository περιλαμβάνει screen recording της εφαρμογής σε λειτουργία, παρουσιάζοντας το authentication, τη διαχείριση δεδομένων και το role-based UI.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
