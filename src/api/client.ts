@@ -58,7 +58,7 @@ export async function api<T>(url: string, options: RequestInit = {}): Promise<T>
                     message = bodyText;
                 }
             }
-        } catch {
+        } catch {  // ignore
 
         }
 

@@ -63,7 +63,7 @@ export default function App() {
                         <Route path="/categories/:id" element={<CategoryAppointmentsPage />} />
                         <Route path="/login" element={<LoginPage />} />
 
-                        {/* 🔒 owner only */}
+                        {/*  owner only */}
                         <Route
                             path="/appointments/new"
                             element={

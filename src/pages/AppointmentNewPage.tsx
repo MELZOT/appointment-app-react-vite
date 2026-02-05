@@ -42,7 +42,7 @@ export default function AppointmentNewPage() {
         categoryId: preselectedCategoryId ?? "",
     });
 
-    // ✅ load categories once
+
     useEffect(() => {
         const load = async () => {
             setLoadingCats(true);
@@ -50,7 +50,7 @@ export default function AppointmentNewPage() {
                 const data = await CategoriesApi.list();
                 setCats(data);
 
-                // αν δεν υπάρχει preselected, βάλε default την 1η κατηγορία
+
                 setForm((prev) => {
                     if (prev.categoryId) return prev;
                     return { ...prev, categoryId: data[0]?.id ? String(data[0].id) : "" };
@@ -95,7 +95,6 @@ export default function AppointmentNewPage() {
                 categoryId: Number(form.categoryId),
             });
 
-            // μετά τη δημιουργία, γύρνα στην κατηγορία
             navigate(`/categories/${form.categoryId}`);
         } catch (e) {
             setError(e instanceof Error ? e.message : "Create failed");

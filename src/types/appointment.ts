@@ -10,6 +10,6 @@ export type Appointment = {
     lastName: string;
     tel: string;
     status: AppointmentStatus;
-    category?: Category | null; // ✅
+    category?: Category | null; //
 };
 
