@@ -46,7 +46,7 @@ password: 1234
 /appointments/:id/edit
 
 ##UI / UX
-Tailwind CSS, cards layout, tables, toast notifications, footer.
+Tailwind CSS, cards layout, tables, toast notifications, reusable layout components (Header, Footer).
 
 *****Video Demo
 
